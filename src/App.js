@@ -1,6 +1,10 @@
+import { useState } from 'react'
+
 const Button = () => {
+  const [count, setCount] = useState(0)
   const clickHandler = (name, e) => {
-    console.log('button 被点击了', name, e)
+    console.log('button 被点击了', count)
+    setCount(count + 1)
   }
   return (
     <button
@@ -10,7 +14,7 @@ const Button = () => {
         clickHandler('jack', e)
       }}
     >
-      button
+      button-{count}
     </button>
   )
 }
