@@ -1,20 +1,26 @@
-//项目的根组件
-const List = [{ index: 1, name: 'Vue' }]
-function App() {
-  const clickHandler = (name) => {
-    console.log('button 被点击了', name)
+const Button = () => {
+  const clickHandler = (name, e) => {
+    console.log('button 被点击了', name, e)
   }
   return (
+    <button
+      type="button"
+      className="btn btn-default"
+      onClick={(e) => {
+        clickHandler('jack', e)
+      }}
+    >
+      button
+    </button>
+  )
+}
+
+//项目的根组件
+
+function App() {
+  return (
     <div className="App">
-      <button
-        type="button"
-        class="btn btn-default"
-        onClick={() => {
-          clickHandler('jack')
-        }}
-      >
-        button
-      </button>
+      <Button></Button>
     </div>
   )
 }
