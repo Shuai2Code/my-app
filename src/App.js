@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+//项目的根组件
+const List = [{ index: 1, name: 'Vue' }]
 function App() {
+  const clickHandler = (name) => {
+    console.log('button 被点击了', name)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button
+        type="button"
+        class="btn btn-default"
+        onClick={() => {
+          clickHandler('jack')
+        }}
+      >
+        button
+      </button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
