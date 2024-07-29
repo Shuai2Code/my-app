@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import './index.css'
 const Button = () => {
   const [stusent, setStudent] = useState({
     name: 'zhangsan',
@@ -31,6 +31,7 @@ const Button = () => {
       <button onClick={changeObject}>
         {stusent.name}-{stusent.age}
       </button>
+      <span className="foo">测试样式文字</span>
     </div>
   )
 }
